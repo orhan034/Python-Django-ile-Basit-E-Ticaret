@@ -1,0 +1,667 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+        
+    <style>
+        .colorradio + label{
+            border: 2px solid rgb(175, 152, 152) !important;
+        }
+        .sizeradio,.colorradio{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+        }
+        .sizeradio:checked + label{
+            background: #b2b2b2 !important;
+            box-shadow: inset 0px 0px 8px 4px #00000060;
+        }
+        .colorradio:checked + label{
+            box-shadow: inset 0px 0px 8px 15px #00000060;
+            border: 3px solid gray !important;
+        }
+    </style>
+{% endblock css %}
+
+{% block body %}
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Sportswear
+										</a>
+									</h4>
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="">Nike </a></li>
+											<li><a href="">Under Armour </a></li>
+											<li><a href="">Adidas </a></li>
+											<li><a href="">Puma</a></li>
+											<li><a href="">ASICS </a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Mens
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="">Fendi</a></li>
+											<li><a href="">Guess</a></li>
+											<li><a href="">Valentino</a></li>
+											<li><a href="">Dior</a></li>
+											<li><a href="">Versace</a></li>
+											<li><a href="">Armani</a></li>
+											<li><a href="">Prada</a></li>
+											<li><a href="">Dolce and Gabbana</a></li>
+											<li><a href="">Chanel</a></li>
+											<li><a href="">Gucci</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Womens
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="">Fendi</a></li>
+											<li><a href="">Guess</a></li>
+											<li><a href="">Valentino</a></li>
+											<li><a href="">Dior</a></li>
+											<li><a href="">Versace</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Kids</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Fashion</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Households</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Interiors</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Clothing</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Bags</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Shoes</a></h4>
+								</div>
+							</div>
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
+									<li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+									<li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
+									<li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
+									<li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
+									<li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
+									<li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						
+						<div class="price-range"><!--price-range-->
+							<h2>Price Range</h2>
+							<div class="well">
+								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+								 <b>$ 0</b> <b class="pull-right">$ 600</b>
+							</div>
+						</div><!--/price-range-->
+						
+						<div class="shipping text-center"><!--shipping-->
+							<img src="{% static 'images/home/shipping.jpg' %}" alt="" />
+						</div><!--/shipping-->
+						
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="view-product">
+								<img src="{{ product.product.image.url }}" alt="" />
+								<h3>ZOOM</h3>
+							</div>
+							<div id="similar-product" class="carousel slide" data-ride="carousel">
+								
+								  <!-- Wrapper for slides -->
+								    <div class="carousel-inner">
+										
+										<div class="item active">
+										    {% for i in product.images.all|slice:':3' %}
+										       <a href=""><img src="{{ i.image.url }}" alt="" style="width: 90px; height:85px"></a>
+											{% endfor %}
+										 </div>
+											
+										
+										<div class="item">
+										  
+										  {% if product.images.all|length > 3 %}
+										    {% for i in product.images.all|slice:'3:6' %}
+										        <a href=""><img src="{{ i.image.url }}" alt="" style="width: 90px; height:85px"></a>
+									         {% endfor %}
+										  {% endif %}
+											
+										</div>
+										<div class="item">
+										  
+											{% if product.images.all|length > 6 %}
+											  {% for i in product.images.all|slice:'6:9' %}
+												  <a href=""><img src="{{ i.image.url }}" alt="" style="width: 90px; height:85px"></a>
+											   {% endfor %}
+											{% endif %}
+											  
+										  </div>
+									</div>
+
+								  <!-- Controls -->
+								  <a class="left item-control" href="#similar-product" data-slide="prev">
+									<i class="fa fa-angle-left"></i>
+								  </a>
+								  <a class="right item-control" href="#similar-product" data-slide="next">
+									<i class="fa fa-angle-right"></i>
+								  </a>
+							</div>
+
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								<img src="{% static 'images/product-details/new.jpg' %}" class="newarrival" alt="" />
+								<h2>{{ product.product.title }}</h2>
+								<p>Web ID: 1089772</p>
+								<span style="margin: 0;">
+									<img src="{% static 'images/product-details/rating.png' %}" alt="" />
+							    | <h4 style="display: inline; margin-left:5px">Rating {{ product.product.stars }}</h4>
+							    | <h4 style="display: inline; margin-left:5px">Comments 0</h4>
+							    </span>
+								<h4><b>Price:</b> ₺ {{ product.sizeletter.first.price }}</h4>
+								<p><b>Description:</b> {{ product.product.text|truncatechars:200 }}</p>
+								<p><b>Brand:</b> {{ product.product.brand }}</p>
+								<a  href=""><img src="{% static 'images/product-details/share.png' %}" class="share img-responsive"  alt="" /></a>
+								<form action="" method="POST" style="margin-top: 20px;">
+									{% csrf_token %}
+									<input type="hidden" name="product-title" value="Activewear">
+									<div class="row">
+										<div class="col-auto">
+											<ul class="list-inline ">
+												<li class="list-inline-item">Color :
+													
+												</li>
+												
+												{% for i in product.product.colors.all %}
+													<li class="list-inline-item">
+														<input type="radio" name="color" onclick="productColor(this.value)" required value="{{ i.styletitle }}" id="{{ i.styletitle }}" class="colorradio" class="colorradio">
+														<label for="{{ i.styletitle }}" class="btn btn-success bg-{{ i.styletitle }}" style="padding: 12px;"></label>
+												    </li>
+												{% endfor %}
+													
+												
+
+											</ul>
+										</div>
+										<div class="col-auto">
+											<ul class="list-inline ">
+												<li class="list-inline-item">Size :</li>
+                                            
+												<li class="list-inline-item">
+													<input type="radio" name="size" onclick="productSize(this.value)" value="S" required id="sizeS" class="sizeradio">
+													<label for="sizeS" class="btn btn-warning">S</label>
+												</li>
+												<li class="list-inline-item">
+													<input type="radio" name="size" onclick="productSize(this.value)" value="M" required id="sizeM" class="sizeradio">
+													<label for="sizeM" class="btn btn-warning">M</label>
+												</li>
+												<li class="list-inline-item">
+													<input type="radio" name="size" onclick="productSize(this.value)" value="L" required id="sizeL" class="sizeradio">
+													<label for="sizeL" class="btn btn-warning">L</label>
+												</li>
+												<li class="list-inline-item">
+													<input type="radio" name="size" onclick="productSize(this.value)" value="XL" required id="sizeXL" class="sizeradio">
+													<label for="sizeXL" class="btn btn-warning">XL</label>
+												</li>
+												<li class="list-inline-item">
+													<input type="radio" name="size" onclick="productSize(this.value)" value="XXL" required id="sizeXXL" class="sizeradio">
+													<label for="sizeXXL" class="btn btn-warning">XXL</label>
+												</li>
+												
+											</ul>
+										</div>
+										<div class="col-auto">
+											<ul class="list-inline pb-3">
+												<li class="list-inline-item text-right">
+													Adet :
+													<input type="hidden" name="count" id="product-quanity" value="1">
+												</li>
+												<li class="list-inline-item"><span class="btn btn-warning" id="btn-minus">-</span></li>
+												<li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+												<li class="list-inline-item"><span class="btn btn-warning" id="btn-plus">+</span></li>
+											</ul>
+										</div>
+									</div>
+									<div class="row pb-3">
+										<div class="col d-grid">
+											{% if messages %}
+												<ul class="messages">
+													{% for message in messages %}
+													<li {% if message.tags %} class="text-danger"{% endif %}>{{ message }}</li>
+													{% endfor %}
+												</ul>
+												{% endif %}
+												
+											{% if request.user.is_authenticated %}	
+											<button type="submit" class="btn btn-warning btn-lg" name="submit" value="button">Sepete Ekle</button>
+											{% else %}
+												<a href="{% url 'loginUser' %}">Sepete eklemek için lütfen kayıt olun!</a>
+											{% endif %}
+												
+										</div>
+									</div>
+								</form>
+								<script>
+									let listprice = "{{ listprice }}".replace("[","").replace("]","").trim().split(", ");
+									let listsize = "{{ listsize|safe }}".replace(/'/g, '').replace("[", "").replace("]", "").split(", ");
+									let listcolor = "{{ listcolor|safe }}".replace(/'/g, '').replace("[", "").replace("]", "").split(", ");
+									var productprice = document.getElementById("productprice");
+									var productsize, productcolor;
+									var colors = [];
+	
+									console.log(listprice);
+									console.log(listsize);
+									console.log(listcolor);
+	
+									productSize = (size)=>{
+										productsize = size.toLowerCase();
+										productPrice();
+										disableColor();
+									}
+									productColor = (color)=>{
+										productcolor = color;
+										productPrice();
+									}
+	
+									productPrice = ()=>{
+										for (i = 0; i < listprice.length; i++) {
+											if (listsize[i] === productsize && listcolor[i] === productcolor) {
+												productprice.innerText = "₺"+listprice[i] 
+											}
+										}
+									}
+	
+									disableColor = ()=>{
+										var colorradio = document.querySelectorAll(".colorradio")
+										for (i = 0; i < listprice.length/2; i++){
+											colorradio[i].setAttribute('disabled', '');
+											
+										}
+										for (i = 0; i < listprice.length; i++) {
+											if(listsize[i] == productsize){
+												console.log("asd");
+												document.getElementById(listcolor[i]).removeAttribute("disabled"); 
+											}
+										}
+									}
+									
+									if (productsize != undefined && productcolor != undefined){
+									}
+									
+								</script>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+					
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li><a href="#details" data-toggle="tab">Details</a></li>
+								<li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
+								<li><a href="#tag" data-toggle="tab">Tag</a></li>
+								<li class="active"><a href="#reviews" data-toggle="tab">Yorumlar</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade" id="details" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery1.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery2.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery3.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery4.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="tab-pane fade" id="companyprofile" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery1.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery3.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery2.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery4.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="tab-pane fade" id="tag" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery1.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery2.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery3.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="{% static 'images/home/gallery4.jpg' %}" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="tab-pane fade active in" id="reviews" >
+								<div class="col-sm-12">
+									
+									{% for i in comments %}
+										<ul>
+										<li><a href=""><i class="fa fa-user"></i>{{ request.user }}</a></li>
+										<li><a href=""><i class="fa fa-clock-o"></i>{{ i.time }}</a></li>
+										<li><a href=""><i class="fa fa-calendar-o"></i>{{ i.date }}</a></li>
+										<li><a href="">Puan ({{ i.star }})</a></li>
+									</ul>
+									<p>{{ i.title }}</p>
+									<p>{{ i.text }}</p>
+									<hr>
+									
+									{% endfor %}
+										
+									
+									<form action="#" method="POST">
+										{% csrf_token %}
+										<span>
+											<input type="text" name="title" placeholder="Yorum Başlığı" required/>
+											<input type="email" name="email" placeholder="Email Address" required/>
+										</span>
+										<select name="star" required class="form-select mb-2" aria-label="Default select example" style="margin-top: 10px;">
+                                            <option selected value="puan">Puanla</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+										<textarea name="text"></textarea>
+										<!-- <b>Rating: </b> <img src="{% static 'images/product-details/rating.png' %}" alt="" /> -->
+										
+										<button type="submit" name="submit" value="buttonComment" class="btn btn-default pull-right">
+											Yorum Yap
+										</button>
+									</form>
+								</div>
+							</div>
+							
+						</div>
+					</div><!--/category-tab-->
+					
+					<div class="recommended_items"><!--recommended_items-->
+						<h2 class="title text-center">recommended items</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+								<div class="item active">	
+									{% for i in prodcts|slice:':3' %}
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="{{ i.product.image.url }}" alt=""  style="height: 130px; width:100px"/>
+													<h2>{{ i.sizeletter.last.price }}</h2>
+													<p>{{ i.product.title }}</p>
+													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+								<div class="item">	
+									{% for i in prodcts|slice:'3:6' %}
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="{{ i.product.image.url }}" alt=""  style="height: 130px; width:100px"/>
+													<h2>{{ i.sizeletter.last.price }}</h2>
+													<p>{{ i.product.title }}</p>
+													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+								
+							</div>
+							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							  </a>
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+						</div>
+					</div><!--/recommended_items-->
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	
+{% endblock body %}	
+
+{% block js %}
+		
+	
+		
+<script>
+	$('.product-links-wap a').click(function(){
+		var this_src = $(this).children('img').attr('src');
+		$('#product-detail').attr('src',this_src);
+		return false;
+	  });
+	  $('#btn-minus').click(function(){
+		var val = $("#var-value").html();
+		val = (val=='1')?val:val-1;
+		$("#var-value").html(val);
+		$("#product-quanity").val(val);
+		return false;
+	  });
+	  $('#btn-plus').click(function(){
+		var val = $("#var-value").html();
+		val++;
+		$("#var-value").html(val);
+		$("#product-quanity").val(val);
+		return false;
+	  });
+	  $('.btn-size').click(function(){
+		var this_val = $(this).html();
+		$("#product-size").val(this_val);
+		$(".btn-size").removeClass('btn-secondary');
+		$(".btn-size").addClass('btn-success');
+		$(this).removeClass('btn-success');
+		$(this).addClass('btn-secondary');
+		return false;
+	  });
+</script>
+
+{% endblock js %}

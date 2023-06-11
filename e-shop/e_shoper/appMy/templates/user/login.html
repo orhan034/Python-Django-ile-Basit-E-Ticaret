@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Hesabınıza Giriş Yapın!</h2>
+						{% if messages %}
+						<ul>
+							{% for message in messages %}
+							<li class="text-danger">{{ message }}</li>
+							{% endfor %}
+						   </ul>
+						{% endif %}
+							
+						<form action="#" method="POST">
+							{% csrf_token %}
+							<input type="text" name="username" placeholder="Kullanıcı Adı & Email Adres" />
+							<input type="password" name="password" placeholder="Şifreniz" />
+							<span>
+								<input type="checkbox" class="checkbox"> 
+								Keep me signed in
+							</span>
+							<button type="submit" name="submit" value="buttonGiris" class="btn btn-default">Giriş Yap</button>
+						</form>
+					</div><!--/login form-->
+				</div>
+				<div class="col-sm-1">
+					<h2 class="or">OR</h2>
+				</div>
+				<div class="col-sm-4">
+					<div class="signup-form"><!--sign up form-->
+						<h2>Yeni Kullanıcı Kaydı!</h2>
+						{% if messages %}
+						<ul>
+							{% for i in messages %}
+							<li class="text-danger">{{ i }}</li>
+							{% endfor %}
+						   </ul>
+						{% endif %}
+						<form action="#" method="POST">
+							{% csrf_token %}
+							<input type="text" name="name" placeholder="Ad"/>
+							<input type="text" name="surname" placeholder="Soyad"/>
+							<input type="email" name="email" placeholder="Email Adres"/>
+							<input type="text" name="username" placeholder="Kullanıcı Adı"/>
+							<input type="password" name="password1" placeholder="Şifre"/>
+							<input type="password" name="password2" placeholder="Şifre Tekrar"/>
+							<button type="submit" name="submit" value="buttonKayit" class="btn btn-default">Kayıt Ol</button>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+	
+	
+	
+{% endblock body %}		
